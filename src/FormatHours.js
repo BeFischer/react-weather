@@ -1,4 +1,4 @@
-
+import React from "react";
 
 export default function FormatHours(props) {
   let date = new Date(props.timestamp);
@@ -10,5 +10,7 @@ export default function FormatHours(props) {
   if (minutes < 10) {
     minutes = `0${minutes}`;
   }
-  return `${hours}:${minutes}`;
+  return (
+    <span>`${hours}:${minutes}`</span>
+  );
 }
