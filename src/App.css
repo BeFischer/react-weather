@@ -1,38 +1,120 @@
-.App {
+.container-fluid {
+  background: rgb(156, 125, 228);
+  border: 1px solid;
+  border-radius: 5px;
+  border-color: black;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+  padding: 10px;
+  margin: 10px auto;
+  width: 70%;
+}
+
+form {
+  display: inline;
+}
+
+.SearchLocation {
+  padding: 10px;
+}
+
+button,
+input {
+  padding: 5px;
+  margin: 0 auto;
+  display: inline;
+  background: rgb(224, 224, 240);
+  box-shadow: 1px 1px 1px;
+  font-size: 12px;
+  border-radius: 5px;
+}
+.currentCity {
+  font-size: 15px;
+  margin-bottom: 15px;
+  margin-top: 15px;
+}
+p {
+  font-size: 13px;
+  margin-bottom: 0px;
+}
+
+.today {
+  margin-left: 15px;
+  margin-bottom: 15px;
+  display: block;
+  text-align: left;
+}
+.today,
+.col-sm,
+.col-sm-1,
+.col-sm-2,
+.card-body {
+  padding: 0;
+  font-size: 20px;
+}
+
+.temperatureEmoji,
+.sky,
+.precipitation,
+.wind,
+.allergy,
+.running,
+.fishing {
+  font-size: 18px;
+  padding: 0;
+  margin: 0;
+}
+
+.currentTemp {
+  display: inline;
+  font-size: 20px;
+}
+
+.todaysForecast {
+  font-size: 11px;
+  display: block;
+  margin: 0;
+  border: 0px;
+  padding: 0;
+}
+
+.forecast .row {
+  line-height: 8px;
+  margin: 0 auto;
+  padding: 0;
+  border: 0;
+  display: inline-block;
+}
+.forecast {
+  opacity: 0.7;
+  font-size: 8px;
+  margin: 0 auto;
+  display: inline-block;
+}
+.forecast,
+.col-sm-1,
+.col-sm,
+.card-body,
+.card-title {
+  padding: 0;
   text-align: center;
+  display: inline-block;
+  margin: 0 auto;
 }
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.card-text .low,
+.high,
+.rain {
+  font-size: 10px;
+  display: inline-block;
+  margin: 0 auto;
 }
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+.card-text .low {
+  background: blue;
   color: white;
+  margin: 0 auto;
 }
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.card-text .high {
+  background: red;
+  color: white;
+  margin: 0 auto;
 }
