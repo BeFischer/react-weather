@@ -11,6 +11,15 @@ footer {
   width: 70%;
 }
 
+footer {
+  background: white;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+  padding: 10px;
+  margin: 10px auto;
+  width: 70%;
+}
+
 form {
   display: inline;
 }
