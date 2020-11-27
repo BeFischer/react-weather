@@ -83,7 +83,7 @@ return (
                 </h4>
                 <h4>
                   <span role="img" aria-label="uV">
-                    🔆8{""}uV
+                    🔆8{" "}uV
                   </span>
                 </h4>
               </div>
