@@ -12,7 +12,7 @@ function App() {
         <div className="container-fluid">
         <Search />
                </div>
-        <footer>Coded by Be Fischer & available in{""}<a href="https://github.com/BeFischer/react-weather" >{""}GitHub</a></footer>
+        <footer>Coded by Be Fischer & available in{" "}<a href="https://github.com/BeFischer/react-weather" >GitHub</a></footer>
     </div>
   );
 }
