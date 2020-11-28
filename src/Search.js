@@ -17,7 +17,7 @@ export default function Search() {
   function showWeather(response) {
     setLoaded(true);
     setWeather({
-            lastUpdate:response.data.dt*1000,
+      lastUpdate:response.data.dt*1000,
       temperature: Math.round(response.data.main.temp),
       wind: Math.round(response.data.wind.speed),
       humidity: response.data.main.humidity,
