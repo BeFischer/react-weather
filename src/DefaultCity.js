@@ -1,9 +1,9 @@
 import React,{useState} from 'react';
 import axios from "axios";
 import './App.css';
-import FormatDate from "./FormatDate.js";
-import FormatHours from "./FormatHours.js";
-import ConvertTemperature from "./ConvertTemperature.js";
+//import FormatDate from "./FormatDate.js";
+//import FormatHours from "./FormatHours.js";
+//import ConvertTemperature from "./ConvertTemperature.js";
 
 
 export default function DefaultCity(props) {

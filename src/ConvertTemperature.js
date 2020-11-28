@@ -1,3 +1,4 @@
+/*
 import React, { useState } from "react";
 
 export default function ConvertTemperature(props) {
@@ -26,3 +27,5 @@ export default function ConvertTemperature(props) {
           </div>
   );
 }
+
+*/
