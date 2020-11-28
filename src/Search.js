@@ -2,16 +2,17 @@ import React, {useState} from 'react';
 import axios from "axios";
 import FormatDate from "./FormatDate.js";
 import FormatHours from "./FormatHours.js";
-import DefaultCityWeather from "./DefaultCityWeather";
+//import DefaultCityWeather from "./DefaultCityWeather";
 //import DefaultCity from "./DefaultCity";
 
 import './App.css';
 
 
-export default function Search(props) {
-  const [city, setCity] = useState(props.city);
+export default function Search() {
+  const [city, setCity] = useState();
   const [weather, setWeather] = useState({});
   const [loaded, setLoaded] = useState(false);
+  console.log(city);
 
   function showWeather(response) {
     setLoaded(true);
@@ -133,11 +134,12 @@ export default function Search(props) {
       </div>
     );
   } else {
+     let city = "New York";
+    let apiKey = "cfeef4d0b0e86d888145aca4caf511b0";
+    let units = "imperial";
+    let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=${units}`;
+    axios.get(apiUrl).then(showWeather);
     return (
-      <div className="initial">
-{form}
-<DefaultCityWeather output={weather} />
-      </div>
-    );
+    <div>form</div> );
   }
 }
