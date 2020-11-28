@@ -8,8 +8,8 @@ import FormatHours from "./FormatHours.js";
 import './App.css';
 
 
-export default function Search() {
-  const [city, setCity] = useState();
+export default function Search(props) {
+  const [city, setCity] = useState(props.city);
   const [weather, setWeather] = useState({});
   const [loaded, setLoaded] = useState(false);
   console.log(city);
@@ -30,14 +30,17 @@ export default function Search() {
     });
   }
 
-  function Searching(event) {
-    event.preventDefault();
+  function Searching() {
     let apiKey = "cfeef4d0b0e86d888145aca4caf511b0";
     let units = "imperial";
     let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=${units}`;
     axios.get(apiUrl).then(showWeather);
     console.log(apiUrl);
   }
+
+function handleSubmit (event){
+event.preventDefault();
+Searching();}
 
   function updateCity(event) {
     setCity(event.target.value);
@@ -48,7 +51,7 @@ export default function Search() {
     <div className="SearchLocation">
       {" "}
       <div className="row">
-        <form className="byCity" onSubmit={Searching}>
+        <form className="byCity" onSubmit={handleSubmit}>
           <input
             type="search"
             placeholder="EnterMajorCity"
@@ -133,13 +136,8 @@ export default function Search() {
         </div>
       </div>
     );
-  } else {
-     let city = "New York";
-    let apiKey = "cfeef4d0b0e86d888145aca4caf511b0";
-    let units = "imperial";
-    let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=${units}`;
-    axios.get(apiUrl).then(showWeather);
-    return (
-    <div>form</div> );
-  }
+ } else { Searching();
+
+  return "...loading";}
+    
 }
