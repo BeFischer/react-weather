@@ -2,14 +2,14 @@ import React, {useState} from 'react';
 import axios from "axios";
 import FormatDate from "./FormatDate.js";
 import FormatHours from "./FormatHours.js";
-import DefaultCity from "./DefaultCity";
-
+import DefaultCityWeather from "./DefaultCityWeather";
+//import DefaultCity from "./DefaultCity";
 
 import './App.css';
 
 
-export default function Search() {
-  const [city, setCity] = useState();
+export default function Search(props) {
+  const [city, setCity] = useState(props.city);
   const [weather, setWeather] = useState({});
   const [loaded, setLoaded] = useState(false);
 
@@ -35,6 +35,7 @@ export default function Search() {
     let units = "imperial";
     let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=${units}`;
     axios.get(apiUrl).then(showWeather);
+    console.log(apiUrl);
   }
 
   function updateCity(event) {
@@ -117,7 +118,7 @@ export default function Search() {
                 </h4>
                 <h4>
                   <span role="img" aria-label="uV">
-                    🔆8{""}uV
+                    🔆8{" "}uV
                   </span>
                 </h4>
               </div>
@@ -133,9 +134,9 @@ export default function Search() {
     );
   } else {
     return (
-      <div>
+      <div className="initial">
 {form}
-<DefaultCity city="New York" />
+<DefaultCityWeather output={weather} />
       </div>
     );
   }
