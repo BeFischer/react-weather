@@ -11,7 +11,7 @@ function App() {
         <div className="container-fluid">
         <Search city="New York" />
         </div>
-       <footer>Coded by Be Fischer & available in{" "}<a href="https://github.com/BeFischer/react-weather" >GitHub</a></footer>
+       <footer>Coded by <a href ="mailto:be_fischer@yahoo.com">Be Fischer </a> & open-sourced in{" "}<a href="https://github.com/BeFischer/react-weather" >GitHub</a></footer>
       
     </div>
   );
