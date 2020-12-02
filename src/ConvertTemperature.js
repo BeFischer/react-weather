@@ -1,31 +1,39 @@
-/*
 import React, { useState } from "react";
 
 export default function ConvertTemperature(props) {
-  let [temperature, setTemperature] = useState(props.temperature);
+  const [unit, setUnit]=useState("degsF");
+
 
   function fahrenheitTemperature(event) {
     event.preventDefault();
-    setTemperature(props.temperature);
+    setUnit("degsF");
   }
 
   function celsiusTemperature(event) {
     event.preventDefault();
-    setTemperature(Math.round((props.temperature-32)/1.8));
+    setUnit("degsC");
   }
 
+  function convertToC(){
+    return ( Math.round((props.degrees-32)/1.8))};
+
+
+if (unit === "degsF") {
   return (
-    <div class="City">
-      {temperature}
-      <a href="/" onClick={celsiusTemperature}>
-        °C
-      </a>{" "}
-      |
-      <a href="/" onClick={fahrenheitTemperature}>
-        °F
-      </a>{" "}
-          </div>
-  );
+    <div className = "CityTemperature">
+     <span className="col-sm-6 currentTemp">{Math.round(props.degrees)} <span classname="unit">°F</span>
+          <a href="/" onClick={celsiusTemperature}>°C</a>{" "}
+     </span>
+    </div>
+  )} else {
+
+    return (    
+    <div className = "CityTemperature">
+     <span className="col-sm-6 currentTemp">{convertToC()} <span classname="unit">
+       <a href="/" onClick={fahrenheitTemperature}>°F</a>|°C</span>
+     </span>
+    </div>
+    )
+  };
 }
 
-*/
