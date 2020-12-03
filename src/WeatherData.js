@@ -2,6 +2,7 @@ import React from 'react';
 import FormatDate from "./FormatDate.js";
 import FormatHours from "./FormatHours.js";
 import ConvertTemperature from "./ConvertTemperature";
+import WeatherIcon from "./WeatherIcon";
 
 
 
@@ -21,9 +22,11 @@ export default function WeatherData(props) {
             <div className="row">
             <ConvertTemperature degrees={props.data.temperature} /> 
             </div>
+        
 
              <div className="row">
-            <div className="col-sm-12 feelslike">Feels like {props.data.feelslike}°F</div>
+             <div className="col-sm-12 feelslike">Feels like:{props.data.feelslike}°F</div>
+
             </div>
 
               <div className="row">
@@ -44,7 +47,7 @@ export default function WeatherData(props) {
                 <ul className = "description">
                 <li className = "text-capitalize">{props.data.description}</li>
                 <li>
-                  <img src={props.data.image} alt={props.data.description} />
+                  <WeatherIcon code ={props.data.icon} />
                 </li>
                 </ul>
               </div>
@@ -72,7 +75,7 @@ export default function WeatherData(props) {
         <div>
 
           <div className="forecast">
-            <h5>forecast for the next hours...</h5>
+            <h5> Forecast </h5>
           </div>
         </div>
 </div>);}

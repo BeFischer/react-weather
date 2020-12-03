@@ -1,7 +1,8 @@
 import React, {useState} from 'react';
 import axios from "axios";
 import WeatherData from "./WeatherData"
-
+import Forecast from "./Forecast";
+//import WeatherIcon from "./WeatherIcon";
 
 import './App.css';
 
@@ -24,7 +25,7 @@ export default function Search(props) {
       name: response.data.name,
       sunrise: response.data.sys.sunrise * 1000,
       sunset: response.data.sys.sunset * 1000,
-      image: `https://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
+      icon: response.data.weather[0].icon,
     });
   }
 
@@ -47,20 +48,20 @@ Searching();}
   let form = (
     <div className="SearchLocation">
       {" "}
-      <div className="row">
-        <form className="byCity" onSubmit={handleSubmit}>
-          <span className="form-group col-sm-4">
-            <input
+      <div>
+        <form className="form-inline"  onSubmit={handleSubmit}>
+          <span className="form-group mb-2">
+            <input className="form-control-sm"
             type="search"
             placeholder="EnterMajorCity"
             onChange={updateCity}
           /> </span>
-          <span className="form-group col-sm-3">
-            <button type="submit">Search</button>
+          <span>
+            <button type="submit" className="btn btn-primary mb-2">Search</button>
           </span>
-        <span className="form-group col-sm-3">
-          <button>SearchCurrentLocation</button>
-        </span>
+        <span>
+          <button className="btn btn-primary mb2">SearchCurrentLocation</button>
+        </span> 
 
         </form>{" "}
 
@@ -73,6 +74,7 @@ Searching();}
       <div>
         {form}
         <WeatherData data={weather} />
+        <Forecast city={weather.name} />
       </div>
     );
  } else { Searching();
