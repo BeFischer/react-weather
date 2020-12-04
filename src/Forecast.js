@@ -15,11 +15,22 @@ function displayForecast(response){
 
 if (loaded && props.city === forecast.city.name){
     return ( 
-    <div className = "row">
-    <div className ="col"> 
+        <div className ="returnforecast">
+            <div className ="row comment"> Forecast: Next 24 hours:</div>
+        <div className="row first">
         <ForecastReturn  data = {forecast.list[0]} />
-    </div>
-    </div> );
+        <ForecastReturn  data = {forecast.list[1]} />
+        <ForecastReturn  data = {forecast.list[2]} />
+        <ForecastReturn  data = {forecast.list[3]} />
+        </div>
+        <div className ="row second">
+        <ForecastReturn  data = {forecast.list[4]} />
+        <ForecastReturn  data = {forecast.list[5]} />
+        <ForecastReturn  data = {forecast.list[6]} />
+        <ForecastReturn  data = {forecast.list[7]} />
+</div>
+</div>
+  );
 } else {
 const apiKey = "cfeef4d0b0e86d888145aca4caf511b0";
   let units = "imperial";

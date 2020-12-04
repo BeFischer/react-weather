@@ -21,15 +21,15 @@ export default function ConvertTemperature(props) {
 if (unit === "degsF") {
   return (
     <div className = "CityTemperature">
-     <span className="col-sm-6 currentTemp">{Math.round(props.degrees)} <span classname="unit">°F</span>
-          <a href="/" onClick={celsiusTemperature}>°C</a>{" "}</span>
+     <span className="col-sm-6 currentTemp">{Math.round(props.degrees)} <span className="unit">°F
+          <a href="/" onClick={celsiusTemperature}>°C</a>{" "}</span></span>
     </div>
   );
 } else {
 
     return (    
     <div className = "CityTemperature">
-     <span className="col-sm-6 currentTemp">{convertToC()} <span classname="unit">
+     <span className="col-sm-6 currentTemp">{convertToC()} <span className="unit">
        <a href="/" onClick={fahrenheitTemperature}>°F</a>°C</span></span>
     </div>
     );

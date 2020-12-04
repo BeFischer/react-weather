@@ -10,16 +10,16 @@ export default function WeatherData(props) {
     return (  <div className = "todaysData">
         <div className="today">
           <div className="row">
-            <div className="col-sm-6 currentTime">
-              <p>Last Update <FormatDate timestamp={props.data.lastUpdate} /> <FormatHours timestamp={props.data.lastUpdate}/> </p>
+            <div className="col-sm-6">
+              <p className = "currentTime">Last Update <FormatDate timestamp={props.data.lastUpdate} /> <FormatHours timestamp={props.data.lastUpdate}/> </p>
             </div>
           </div>
 
            <div className="row">
-            <div className="col-sm-3 currentCity"> {props.data.name}</div>
+            <div className="col-6 currentCity"> {props.data.name}</div>
             </div>
 
-            <div className="row">
+            <div className="row currentTemp">
             <ConvertTemperature degrees={props.data.temperature} /> 
             </div>
         
@@ -31,52 +31,54 @@ export default function WeatherData(props) {
 
               <div className="row">
                <div className="col-sm-12 sunrisesunset">
-                  <span role="img" aria-label="sunrise">
-                    🌄 :<FormatHours timestamp= {props.data.sunrise} />
+                  <span className="sun"><i class="far fa-sun"></i>
+                    {" "}<FormatHours timestamp= {props.data.sunrise} />{" "}
                   </span>
-                  <span role="img" aria-label="sunset">
-                    🌇: <FormatHours timestamp={props.data.sunset} />
+                  <span className="sunset"><i class="fas fa-moon"></i>
+                    {" "} <FormatHours timestamp={props.data.sunset} />
                   </span>
                </div>
             </div>          
 
           <div className="row">
 
-            <div className="col">
+            <div className="col-3">
               <div className="card-body">
-                <ul className = "description">
-                <li className = "text-capitalize">{props.data.description}</li>
-                <li>
+                <ul className = "sky">
+                <li className = "image">
                   <WeatherIcon code ={props.data.icon} />
                 </li>
+                <li className = "text-capitalize description">{props.data.description}</li>
+
                 </ul>
               </div>
             </div>
 
-            <div className="col">
+            <div className="col-3">
               <div className="card-body">
-                <ul className="windHumidity">
+                <ul className="sky">
                 <li>
-                  <span role="img" aria-label="wind">
-                    🌬 {props.data.wind}
-                    {""}MPH
-                  </span>{" "}
+                    <span className="wind"><i className="fas fa-wind"></i></span>
                 </li>
-                <li>
-                  <span role="img" aria-label="humidity">
-                    💧 {props.data.humidity}%{""}Humidity{" "}
-                  </span>
-                </li>
+                <li className="windspeed">   {props.data.wind}
+                    {" "}MPH</li>
                 </ul>
+              </div>
+            </div>
+                
+            <div className="col-3">
+              <div className="card-body">
+                <ul className="sky">
+                <li>
+                  <span className="humidity"><i class="fas fa-tint"></i></span> </li>
+                    <li className = "wet">{props.data.humidity}%{" "}Humidity{" "}</li>
+                              </ul>
               </div>
             </div>
           </div>
         </div>
         <div>
 
-          <div className="forecast">
-            <h5> Forecast </h5>
-          </div>
         </div>
 </div>);}
   

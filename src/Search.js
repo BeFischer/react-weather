@@ -48,24 +48,23 @@ Searching();}
   let form = (
     <div className="SearchLocation">
       {" "}
-      <div>
-        <form className="form-inline"  onSubmit={handleSubmit}>
-          <span className="form-group mb-2">
-            <input className="form-control-sm"
+          <div className="row">
+        <form className="byCity" onSubmit={handleSubmit}>
+      
+          <span className="form-group col-sm-3">
+            <input
             type="search"
             placeholder="EnterMajorCity"
+            autoFocus="on"
             onChange={updateCity}
           /> </span>
-          <span>
-            <button type="submit" className="btn btn-primary mb-2">Search</button>
+          <span className="col-sm-2">
+            <button type="submit" >Search</button>
           </span>
-        <span>
-          <button className="btn btn-primary mb2">SearchCurrentLocation</button>
-        </span> 
-
+         
         </form>{" "}
-
-      </div>
+ </div>
+     
     </div>
   );
 
