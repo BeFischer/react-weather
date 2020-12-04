@@ -10,27 +10,20 @@ export default function WeatherData(props) {
     return (  <div className = "todaysData">
         <div className="today">
           <div className="row">
-            <div className="col-sm-6">
-              <p className = "currentTime">Last Update <FormatDate timestamp={props.data.lastUpdate} /> <FormatHours timestamp={props.data.lastUpdate}/> </p>
+            <div className="col-sm-4">
+              <p className = "currentTime">Updated on <FormatDate timestamp={props.data.lastUpdate} /> <FormatHours timestamp={props.data.lastUpdate}/> </p>
             </div>
-          </div>
-
-           <div className="row">
             <div className="col-6 currentCity"> {props.data.name}</div>
             </div>
 
-            <div className="row currentTemp">
+            <div className="row temperatures">
+                <div className="col-4 currentTemp">
             <ConvertTemperature degrees={props.data.temperature} /> 
-            </div>
-        
+            </div>      
 
-             <div className="row">
-             <div className="col-sm-12 feelslike">Feels like:{props.data.feelslike}°F</div>
+             <div className="col-4 feelslike">Feels like:{props.data.feelslike}°F</div>
 
-            </div>
-
-              <div className="row">
-               <div className="col-sm-12 sunrisesunset">
+               <div className="col-4 sunrisesunset">
                   <span className="sun"><i class="far fa-sun"></i>
                     {" "}<FormatHours timestamp= {props.data.sunrise} />{" "}
                   </span>
@@ -38,13 +31,12 @@ export default function WeatherData(props) {
                     {" "} <FormatHours timestamp={props.data.sunset} />
                   </span>
                </div>
-            </div>          
+</div>
+          <div className="row currentWeather">
 
-          <div className="row">
-
-            <div className="col-3">
+            <div className="col-4">
               <div className="card-body">
-                <ul className = "sky">
+                <ul className = "skyimage">
                 <li className = "image">
                   <WeatherIcon code ={props.data.icon} />
                 </li>
@@ -54,7 +46,7 @@ export default function WeatherData(props) {
               </div>
             </div>
 
-            <div className="col-3">
+            <div className="col-4">
               <div className="card-body">
                 <ul className="sky">
                 <li>
@@ -66,7 +58,7 @@ export default function WeatherData(props) {
               </div>
             </div>
                 
-            <div className="col-3">
+            <div className="col-4">
               <div className="card-body">
                 <ul className="sky">
                 <li>
