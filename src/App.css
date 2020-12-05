@@ -32,15 +32,15 @@
   margin-top: 15px;
 }
 .currentTemp {
-  font-size: 30px;
+  font-size: 31px;
   margin-bottom: 2px;
   padding-right: 5px;
 }
 .unit {
   font-size: 20px;
-  vertical-align: super;
   position: relative;
   left: -7px;
+  bottom: 4px;
 }
 .feelslike {
   font-size: 20px;
@@ -48,7 +48,7 @@
   bottom: -10px;
 }
 .fa-sun {
-  color: rgb(255, 0, 0);
+  color: rgb(255, 196, 0);
 }
 .fa-moon {
   color: rgb(43, 170, 192);

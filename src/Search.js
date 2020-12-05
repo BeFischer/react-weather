@@ -10,6 +10,8 @@ import './App.css';
 export default function Search(props) {
   const [city, setCity] = useState(props.city);
   const [weather, setWeather] = useState({loaded:false});
+  let units = "imperial";
+
   console.log(city);
 
   function showWeather(response) {
@@ -31,7 +33,6 @@ export default function Search(props) {
 
   function Searching() {
     const apiKey = "cfeef4d0b0e86d888145aca4caf511b0";
-    let units = "imperial";
     let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=${units}`;
     axios.get(apiUrl).then(showWeather);
   }
@@ -72,7 +73,7 @@ Searching();}
     return (
       <div>
         {form}
-        <WeatherData data={weather} />
+        <WeatherData data={weather} units={units}/>
         <Forecast city={weather.name} />
       </div>
     );

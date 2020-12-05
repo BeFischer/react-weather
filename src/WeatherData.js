@@ -11,14 +11,14 @@ export default function WeatherData(props) {
         <div className="today">
           <div className="row">
             <div className="col-sm-4">
-              <p className = "currentTime">Updated on <FormatDate timestamp={props.data.lastUpdate} /> <FormatHours timestamp={props.data.lastUpdate}/> </p>
+              <p className = "currentTime">Updated on <div><FormatDate timestamp={props.data.lastUpdate} /> <FormatHours timestamp={props.data.lastUpdate}/></div> </p>
             </div>
             <div className="col-6 currentCity"> {props.data.name}</div>
             </div>
 
             <div className="row temperatures">
                 <div className="col-4 currentTemp">
-            <ConvertTemperature degrees={props.data.temperature} /> 
+            <ConvertTemperature degrees={props.data.temperature} unit={props.units}/> 
             </div>      
 
              <div className="col-4 feelslike">Feels like:{props.data.feelslike}°F</div>
